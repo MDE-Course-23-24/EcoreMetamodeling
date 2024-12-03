@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/it.univaq.disim.mde.course.ecore.model/src" modelPluginID="it.univaq.disim.mde.course.ecore.model"
+    modelName="ER" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>ER.ecore</foreignModel>
+  <genPackages prefix="EntityRelationship" disposableProviderFactory="true" ecorePackage="ER.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ER.ecore#//PrimitiveTypes">
+      <genEnumLiterals ecoreEnumLiteral="ER.ecore#//PrimitiveTypes/String"/>
+      <genEnumLiterals ecoreEnumLiteral="ER.ecore#//PrimitiveTypes/Boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="ER.ecore#//PrimitiveTypes/Integer"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ER.ecore#//Cardinality">
+      <genEnumLiterals ecoreEnumLiteral="ER.ecore#//Cardinality/ONE2ONE"/>
+      <genEnumLiterals ecoreEnumLiteral="ER.ecore#//Cardinality/ONE2MANY"/>
+      <genEnumLiterals ecoreEnumLiteral="ER.ecore#//Cardinality/MANY2MANY"/>
+    </genEnums>
+    <genClasses ecoreClass="ER.ecore#//DataBase">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ER.ecore#//DataBase/entities"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ER.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ER.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ER.ecore#//Entity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ER.ecore#//Entity/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ER.ecore#//Entity/relationships"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ER.ecore#//Entity/incomingRelationships"/>
+    </genClasses>
+    <genClasses ecoreClass="ER.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ER.ecore#//Attribute/isPK"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ER.ecore#//Attribute/type"/>
+    </genClasses>
+    <genClasses ecoreClass="ER.ecore#//Relationship">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ER.ecore#//Relationship/cardinality"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ER.ecore#//Relationship/entity"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

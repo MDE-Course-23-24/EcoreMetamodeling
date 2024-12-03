@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ER:DataBase
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ER="http://it.univaq.disim.mde.course.ecore"
+    xsi:schemaLocation="http://it.univaq.disim.mde.course.ecore ER.ecore">
+  <entities
+      name="Product"
+      incomingRelationships="//@entities.2/@relationships.1">
+    <attributes
+        name="ID"
+        isPK="true"/>
+    <attributes
+        name="productName"/>
+  </entities>
+  <entities
+      name="Client"
+      incomingRelationships="//@entities.2/@relationships.0">
+    <attributes
+        name="ID"
+        isPK="true"/>
+    <attributes
+        name="clientName"/>
+  </entities>
+  <entities
+      name="Order">
+    <attributes
+        name="ID"
+        isPK="true"/>
+    <attributes
+        name="OrderName"/>
+    <relationships
+        name="client"
+        entity="//@entities.1"/>
+    <relationships
+        name="products"
+        entity="//@entities.0"/>
+  </entities>
+</ER:DataBase>

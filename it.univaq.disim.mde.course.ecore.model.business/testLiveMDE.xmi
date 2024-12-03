@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ER:DataBase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ER="http://it.univaq.disim.mde.course.ecore" name="Commerce">
+  <entities name="Client">
+    <attributes name="productName"/>
+  </entities>
+  <entities name="Product">
+    <attributes name="clientName"/>
+  </entities>
+</ER:DataBase>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated ER -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="EntityRelationship.presentation.EntityRelationshipModelWizardID"
+            name="%_UI_EntityRelationshipModelWizard_label"
+            class="EntityRelationship.presentation.EntityRelationshipModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/EntityRelationshipModelFile.gif">
+         <description>%_UI_EntityRelationshipModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated ER -->
+      <editor
+            id="EntityRelationship.presentation.EntityRelationshipEditorID"
+            name="%_UI_EntityRelationshipEditor_label"
+            icon="icons/full/obj16/EntityRelationshipModelFile.gif"
+            extensions="entityrelationship"
+            class="EntityRelationship.presentation.EntityRelationshipEditor"
+            contributorClass="EntityRelationship.presentation.EntityRelationshipActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

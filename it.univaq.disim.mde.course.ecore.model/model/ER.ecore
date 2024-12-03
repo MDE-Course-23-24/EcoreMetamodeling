@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="EntityRelationship" nsURI="http://it.univaq.disim.mde.course.ecore"
+    nsPrefix="ER">
+  <eClassifiers xsi:type="ecore:EClass" name="DataBase" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
+        eType="#//Entity" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//Attribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationships" upperBound="-1"
+        eType="#//Relationship" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingRelationships"
+        upperBound="-1" eType="#//Relationship" eOpposite="#//Relationship/entity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPK" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PrimitiveTypes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relationship" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" eType="#//Cardinality"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
+        eType="#//Entity" eOpposite="#//Entity/incomingRelationships"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PrimitiveTypes">
+    <eLiterals name="String"/>
+    <eLiterals name="Boolean" value="1"/>
+    <eLiterals name="Integer" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Cardinality">
+    <eLiterals name="ONE2ONE"/>
+    <eLiterals name="ONE2MANY" value="1"/>
+    <eLiterals name="MANY2MANY" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>
